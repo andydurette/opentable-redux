@@ -1,32 +1,32 @@
 import {
-  FETCH_USERS_REQUEST,
-  FETCH_USERS_SUCCESS,
-  FETCH_USERS_FAILURE
-} from './userTypes'
+  FETCH_RESTAURANTS_REQUEST,
+  FETCH_RESTAURANTS_SUCCESS,
+  FETCH_RESTAURANTS_FAILURE
+} from './restaurantsTypes'
 
 const initialState = {
   loading: false,
-  users: [],
+  restaurants: [],
   error: ''
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_USERS_REQUEST:
+    case FETCH_RESTAURANTS_REQUEST:
       return {
         ...state,
         loading: true
       }
-    case FETCH_USERS_SUCCESS:
+    case FETCH_RESTAURANTS_SUCCESS:
       return {
         loading: false,
-        users: action.payload,
+        restaurants: action.payload,
         error: ''
       }
-    case FETCH_USERS_FAILURE:
+    case FETCH_RESTAURANTS_FAILURE:
       return {
         loading: false,
-        users: [],
+        restaurants: [],
         error: action.payload
       }
     default: return state
