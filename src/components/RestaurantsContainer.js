@@ -12,16 +12,20 @@ function RestaurantsContainer ({ restaurantsData, fetchRestaurants }) {
   ) : restaurantsData.error ? (
     <h2>{restaurantsData.error}</h2>
   ) : (
-    <div>
+    <div id="restaurantBox">
       <h2>Restaurants List</h2>
-      <div>
-      {restaurantsData &&
-          restaurantsData.restaurants.restaurants &&
-          restaurantsData.restaurants.restaurants.map(user => <p>{user.name}</p>)}
-      {/* {restaurantsData &&
-          restaurantsData.restaurants[0] &&
-          restaurantsData.restaurants[0].map(restaurants => <p>{restaurants.name}</p>)} */}
-      </div>
+      <section id="restaurantContainer">
+        {restaurantsData &&
+            restaurantsData.restaurants.restaurants &&
+        restaurantsData.restaurants.restaurants.map((restaurants) => ( 
+          <div className="restaurantItem" key={restaurants.id} style={{backgroundImage: `url(${restaurants.image_url})`}}>
+            <div className="info">
+              <h3>{restaurants.name}</h3> 
+              <button onClick={ () => window.open(`${restaurants.reserve_url}`,'_blank') }>Reserve</button>
+            </div>
+          </div>
+           ))}
+      </section>
     </div>
   )
 }

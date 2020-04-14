@@ -1,0 +1,178 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #db3743;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 14px 0px 10px 0px;
+  cursor: pointer;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+
+.badge h4, .badge p{
+  text-align: left;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 12.5%;
+  box-sizing: border-box;
+}
+
+.badge h4, .badge p{
+font-weight:700;
+}
+
+.badge h4 span, .badge p span{
+  font-weight:300;
+}
+
+.info-call{
+  width: 50%;
+  text-align: center;
+  padding: 10px!important;
+  margin-bottom: 20px!important;
+  margin-top: 8px!important;
+  margin-left: 12.5%!important;
+}
+
+p{
+  margin-top:8px;
+  margin-bottom:8px;
+}
+
+.notice{
+  margin-left:15px;
+}
+
+
+form, h1, .logo{
+  padding:10px 40px;
+  margin:0;
+}
+
+.collection .openimage{
+min-height:270px;
+margin-bottom:10px;
+}
+
+.collection .openimage img{
+width:75%;
+margin-left:12.5%;
+border-radius:8px;
+}
+
+
+
+.logo img{
+  width:100%;
+  max-width:400px;
+}
+
+.fade-in {
+opacity: 1;
+animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: 0.5s;
+}
+
+@keyframes fadeInOpacity {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 792px){
+
+  .collection{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      -ms-box-orient: horizontal;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+  
+  .collection .badge:nth-of-type(odd) {
+      width:50%;
+  }
+  .collection .badge:nth-of-type(even) {
+      width:50%;
+  }
+  
+}
+
+@media only screen and (min-width: 793px) and (max-width: 950px){
+
+  .collection{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      -ms-box-orient: horizontal;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+  
+  .collection .badge{
+      width:33.3%;
+  }    
+}
+
+
+@media only screen and (min-width: 951px){
+
+  .collection{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      -ms-box-orient: horizontal;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+  
+  .collection .badge{
+      width:25%;
+  }
+
+}
