@@ -4,7 +4,7 @@ import { fetchRestaurants } from '../redux'
 
 function RestaurantsContainer ({ restaurantsData, fetchRestaurants }) {
   useEffect(() => {
-    fetchRestaurants();
+    fetchRestaurants('toronto');
     // eslint-disable-next-line
   }, [])
   return restaurantsData.loading ? (
@@ -18,9 +18,18 @@ function RestaurantsContainer ({ restaurantsData, fetchRestaurants }) {
         {restaurantsData &&
             restaurantsData.restaurants.restaurants &&
         restaurantsData.restaurants.restaurants.map((restaurants) => ( 
-          <div className="restaurantItem" key={restaurants.id} style={{backgroundImage: `url(${restaurants.image_url})`}}>
+          <div className="restaurantItem" key={restaurants.id}>
+            <div className="priceBox">
+            {[...Array(restaurants.price)].map((e, i) => {
+              return <img key={i} src="./assets/images/dollarSignActive.svg" alt=""/>
+            })}
+            </div>
+            <img src={restaurants.image_url} alt=""/>
             <div className="info">
               <h3>{restaurants.name}</h3> 
+              <p>Location: {restaurants.address}</p>
+              <p>Phone: {restaurants.phone}</p>
+              
               <button onClick={ () => window.open(`${restaurants.reserve_url}`,'_blank') }>Reserve</button>
             </div>
           </div>

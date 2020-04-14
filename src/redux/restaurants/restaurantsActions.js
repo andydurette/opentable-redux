@@ -5,11 +5,11 @@ import {
   FETCH_RESTAURANTS_FAILURE
 } from './restaurantsTypes'
 
-export const fetchRestaurants = () => {
+export const fetchRestaurants = (city) => {
   return (dispatch) => {
     dispatch(fetchRestaurantsRequest())
     axios
-      .get('http://opentable.herokuapp.com/api/restaurants?city=toronto')
+      .get(`http://opentable.herokuapp.com/api/restaurants?city=toronto`)
       .then(response => {
         // response.data is the Restaurants
         const Restaurants = response.data
