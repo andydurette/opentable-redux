@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { fetchRestaurants } from '../redux'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchRestaurants } from '../reducers';
+
+// component
 
 function RestaurantsContainer ({ restaurantsData, fetchRestaurants }) {
+
   useEffect(() => {
-    fetchRestaurants('toronto');
+    //fetchRestaurants('toronto');
     // eslint-disable-next-line
-  }, [])
+  }, []);
+
   return restaurantsData.loading ? (
     <h2>Loading</h2>
   ) : restaurantsData.error ? (
@@ -47,7 +51,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchRestaurants: () => dispatch(fetchRestaurants())
+    fetchRestaurants: (val) => dispatch(fetchRestaurants(val))
   }
 }
 

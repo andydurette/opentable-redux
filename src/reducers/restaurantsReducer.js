@@ -2,7 +2,7 @@ import {
   FETCH_RESTAURANTS_REQUEST,
   FETCH_RESTAURANTS_SUCCESS,
   FETCH_RESTAURANTS_FAILURE
-} from './restaurantsTypes'
+} from '../actions/restaurantsTypes'
 
 const initialState = {
   loading: false,

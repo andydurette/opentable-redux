@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import 'normalize.css';
-import './scss/App.scss';
-import store from './redux/store';
+import './styles/App.scss';
+import store from './store/store';
 import RestaurantsForm from './components/RestaurantsForm';
 import RestaurantsContainer from './components/RestaurantsContainer';
 

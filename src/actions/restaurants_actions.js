@@ -3,13 +3,16 @@ import {
   FETCH_RESTAURANTS_REQUEST,
   FETCH_RESTAURANTS_SUCCESS,
   FETCH_RESTAURANTS_FAILURE
-} from './restaurantsTypes'
+} from './restaurantsTypes';
 
-export const fetchRestaurants = (city) => {
+
+export function fetchRestaurants(val){
+  var url = `http://opentable.herokuapp.com/api/restaurants?city=${val}`;
+  console.log(url);
   return (dispatch) => {
-    dispatch(fetchRestaurantsRequest())
+    dispatch(fetchRestaurantsRequest(val))
     axios
-      .get(`http://opentable.herokuapp.com/api/restaurants?city=toronto`)
+      .get(url)
       .then(response => {
         // response.data is the Restaurants
         const Restaurants = response.data
@@ -21,6 +24,7 @@ export const fetchRestaurants = (city) => {
       })
   }
 }
+
 
 export const fetchRestaurantsRequest = () => {
   return {

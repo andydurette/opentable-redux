@@ -2,6 +2,8 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+
+
 h2{
   margin-bottom:40px;
   margin-left:10px;
@@ -16,7 +18,7 @@ input[type=text] {
   box-sizing: border-box;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button], button[type=submit], input[type=reset] {
   background-color: #db3743;
   border: none;
   color: white;
@@ -24,6 +26,16 @@ input[type=button], input[type=submit], input[type=reset] {
   text-decoration: none;
   margin: 14px 0px 10px 0px;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+#city{
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 5px;
 }
 
 /* Change the white to any color ;) */
