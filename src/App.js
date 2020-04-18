@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import 'normalize.css';
 import './styles/App.scss';
-import store from './store/store';
+import store from './redux/store/index';
 import RestaurantsForm from './components/RestaurantsForm';
 import RestaurantsContainer from './components/RestaurantsContainer';
 

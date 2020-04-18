@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRestaurants } from '../reducers';
+import { fetchRestaurants } from '../redux/reducers';
 
 function RestaurantsForm ({ restaurantsData, fetchRestaurants }) {
 

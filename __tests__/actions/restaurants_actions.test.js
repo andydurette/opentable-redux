@@ -1,16 +1,19 @@
-import axios from 'axios'
+import axios from 'axios';
+
+import {fetchRestaurants} from '../../src/redux/actions/restaurants_actions';
+ 
 import {
   FETCH_RESTAURANTS_REQUEST,
   FETCH_RESTAURANTS_SUCCESS,
   FETCH_RESTAURANTS_FAILURE
-} from './restaurantsTypes';
+} from '../../src/redux/actions/restaurantsTypes';
+
 
 
 export function fetchRestaurants(val){
   var url = `http://opentable.herokuapp.com/api/restaurants?city=${val}`;
-  console.log(url);
-  return (dispatch) => {
-    dispatch(fetchRestaurantsRequest(val))
+  return (dispatch) => { 
+    dispatch(fetchRestaurantsRequest(val));
     axios
       .get(url)
       .then(response => {
@@ -24,6 +27,20 @@ export function fetchRestaurants(val){
       })
   }
 }
+
+
+//
+
+describe("Calls data for restaurants", () => {
+  it("handles making the data call", async () => {
+    const dispatch = jest.fn();
+    const getState = jest.fn();
+    await fetchRestaurants("toronto")(dispatch, getState);
+    expect(dispatch).toBeCalledWith({type: "FETCH_RESTAURANTS_REQUEST"});
+  });
+});
+
+//
 
 
 export const fetchRestaurantsRequest = () => {

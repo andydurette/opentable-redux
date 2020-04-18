@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchRestaurants } from '../reducers';
+import { fetchRestaurants } from '../redux/reducers';
 
 // component
 
