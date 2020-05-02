@@ -1,1 +1,1 @@
-export * from '../actions/restaurants_actions'
+export * from '../actions/restaurants_actions';

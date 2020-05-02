@@ -11,7 +11,7 @@ function App () {
     <Provider store={store}>
       <div className='App'>
         <div className='logo'><img src="./assets/images/OpenTable_logo2.png" alt="Open Table Logo"/></div>
-        <h1>Canada's Resturant Lookup by city</h1>
+        <h1>Resturant Lookup by city</h1>
       
         <RestaurantsForm />
         <RestaurantsContainer />

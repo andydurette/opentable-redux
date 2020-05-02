@@ -5,43 +5,21 @@ import {
   FETCH_RESTAURANTS_FAILURE
 } from './restaurantsTypes';
 
-
 export function fetchRestaurants(val){
   var url = `http://opentable.herokuapp.com/api/restaurants?city=${val}`;
-  console.log(url);
+  // Returns a function so that it doesn't have to be a pure function allowing asynconisity
   return (dispatch) => {
-    dispatch(fetchRestaurantsRequest(val));
-    axios
-      .get(url)
-      .then(response => {
-        // response.data is the Restaurants
-        const Restaurants = response.data
-        dispatch(fetchRestaurantsSuccess(Restaurants))
-      })
-      .catch(error => {
-        // error.message is the error message
-        dispatch(fetchRestaurantsFailure(error.message))
-      })
+    // Sets loading screen until pass or failure is determined
+    dispatch(fetchRestaurantsRequest());
+    // Runs data call
+    return axios.get(url)
+      .then(response => dispatch({ type: FETCH_RESTAURANTS_SUCCESS, payload: response.data }))
+      .catch(error =>  dispatch({ type: FETCH_RESTAURANTS_FAILURE, payload: error.message}))
   }
 }
-
 
 export const fetchRestaurantsRequest = () => {
   return {
     type: FETCH_RESTAURANTS_REQUEST
-  }
-}
-
-export const fetchRestaurantsSuccess = Restaurants => {
-  return {
-    type: FETCH_RESTAURANTS_SUCCESS,
-    payload: Restaurants
-  }
-}
-
-export const fetchRestaurantsFailure = error => {
-  return {
-    type: FETCH_RESTAURANTS_FAILURE,
-    payload: error
   }
 }
