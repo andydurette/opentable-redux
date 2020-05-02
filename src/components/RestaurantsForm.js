@@ -1,13 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchRestaurants } from '../redux/reducers';
 
-function RestaurantsForm ({ restaurantsData, fetchRestaurants }) {
+function RestaurantsForm () {
+  const dispatch = useDispatch()
 
   let teamMake = (e) =>{
     e.preventDefault();
     let city = e.target.city.value;
-    fetchRestaurants(city);
+    dispatch(fetchRestaurants(city));
+    
   }
 
   return (
@@ -18,19 +20,4 @@ function RestaurantsForm ({ restaurantsData, fetchRestaurants }) {
         )
 }
 
-const mapStateToProps = state => {
-  return {
-    restaurantsData: state.restaurants
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchRestaurants: (val) => dispatch(fetchRestaurants(val))
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RestaurantsForm)
+export default RestaurantsForm

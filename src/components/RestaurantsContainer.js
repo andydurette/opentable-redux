@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect, useSelector } from 'react-redux';
-import { fetchRestaurants } from '../redux/reducers';
+import {useSelector} from 'react-redux';
 
 function RestaurantsContainer () {
 const restaurantsData = useSelector(state => state.restaurants);
