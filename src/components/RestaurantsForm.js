@@ -1,21 +1,22 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchRestaurants } from '../redux/reducers';
+import { useDispatch} from 'react-redux';
+import { fetchRestaurants } from '../actions/restaurants_actions';
 
-function RestaurantsForm () {
-  const dispatch = useDispatch()
+function RestaurantsForm () {;
+  const dispatch = useDispatch();
 
-  let teamMake = (e) =>{
+  let restaurantSearch = (e) =>{
     e.preventDefault();
     let city = e.target.city.value;
-    dispatch(fetchRestaurants(city));
-    
+    if(city !== ''){
+      dispatch(fetchRestaurants(city));;
+    }
   }
 
   return (
-      <form id='form' onSubmit={(e) => teamMake(e)}>
-        <input id="city" type="text" name="city" />
-        <button type="submit" value="Submit">Search for Resturants</button>
+      <form id='restaurantSearchForm' onSubmit={(e) => restaurantSearch(e)}>
+        <input id="city" type="text" name="city" placeholder="Enter city" />
+        <button type="submit" value="Submit">Search</button>
       </form>
         )
 }

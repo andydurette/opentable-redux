@@ -1,44 +1,76 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import RestaurantsFilterForm from './RestaurantsFilterForm';
+
 
 function RestaurantsContainer () {
 const restaurantsData = useSelector(state => state.restaurants);
+const restaurantName = useSelector(state => state.restaurantsFilter.restaurantName);
 
-  return restaurantsData.loading ? (
-    <h2>Loading</h2>
-  ) : restaurantsData.error ? (
-    <h2>{restaurantsData.error}</h2>
-  ) : (
-    <div id="restaurantBox">
-      <React.Fragment>
-          <h2>Restaurants List</h2>
-      <section id="restaurantContainer">
-     
-        {restaurantsData &&
-            restaurantsData.restaurants.restaurants &&
-        restaurantsData.restaurants.restaurants.map((restaurants) => (
-          
-          <div className="restaurantItem" key={restaurants.id}>
-            <div className="priceBox">
-            {[...Array(restaurants.price)].map((e, i) => {
-              return <img key={i} src="./assets/images/dollarSignActive.svg" alt=""/>
-            })}
-            </div>
-            <img src={restaurants.image_url} alt=""/>
-            <div className="info">
-              <h3>{restaurants.name}</h3> 
-              <p>Address: {restaurants.address}</p>
-              <p>Phone: {restaurants.phone}</p>
-              
-              <button onClick={ () => window.open(`${restaurants.reserve_url}`,'_blank') }>Reserve</button>
-            </div>
+  if ( restaurantsData.loading ) {
+    return (
+      <div id="restaurantBox">
+        <div id="restaurantFilterOutterWrapper">
+          <div id="restaurantFilterInnerWrapper">
+          <p>Filter Results</p>
+          <RestaurantsFilterForm />
           </div>
-           ))}
-           
-      </section>
+        </div>
+        <p>Loading</p>
+      </div>
+    )
+  }else if ( restaurantsData.error !== "" ) {
+    return (
+      <div id="restaurantBox">
+        <div id="restaurantFilterOutterWrapper">
+          <div id="restaurantFilterInnerWrapper">
+          <p>Filter Results</p>
+          <RestaurantsFilterForm />
+          </div>
+        </div>
+        <p>{restaurantsData.error}</p>
+      </div>
+    )
+  }else {
+    return (
+      <div id="restaurantBox">
+      <React.Fragment>
+      <div id="restaurantFilterOutterWrapper">
+          <div id="restaurantFilterInnerWrapper">
+          <p>Filter Results</p>
+          <RestaurantsFilterForm />
+          </div>
+        </div>
+        <section id="restaurantContainer">
+          
+          {restaurantsData && restaurantsData.restaurants.restaurants !== undefined &&
+        
+        restaurantsData.restaurants.restaurants.filter((restaurant) => {
+          let rName = restaurantName.toLowerCase();
+          return restaurant.name.toLowerCase().includes(rName)
+        }).map((restaurants) => (
+            <div className="restaurantItem" key={restaurants.id}>
+              <div className="priceBox">
+              {[...Array(restaurants.price)].map((e, i) => {
+                return <img key={i} src="./assets/images/dollarSignActive.svg" alt=""/>
+              })}
+              </div>
+            <img src={restaurants.image_url} alt=""/>
+              <div className="info">
+                <h3>{restaurants.name}</h3> 
+                <p>Address: {restaurants.address}</p>
+                <p>Phone: {restaurants.phone}</p>
+                
+                <button onClick={ () => window.open(`${restaurants.reserve_url}`,'_blank') }>Reserve</button>
+              </div>
+            </div>
+            ))}
+            
+        </section>
       </React.Fragment>
     </div>
-  )
+    )
+  }
 }
 
 export default RestaurantsContainer
