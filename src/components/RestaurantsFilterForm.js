@@ -12,8 +12,8 @@ function RestaurantsForm () {;
   }
 
   return (
-    <div id="restaurantFilter">
-      <input name="restaurantFilter" type="text" placeholder="Enter restaurant name" onChange={(e) => restaurantFilter(e)}/>
+    <div id="restaurantFilter" data-test="restaurant-filter">
+      <input data-test="restaurant-filter-input" name="restaurantFilter" type="text" placeholder="Enter restaurant name" onChange={(e) => restaurantFilter(e)}/>
     </div>
   )
 }

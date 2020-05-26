@@ -9,7 +9,7 @@ const restaurantName = useSelector(state => state.restaurantsFilter.restaurantNa
 
   if ( restaurantsData.loading ) {
     return (
-      <div id="restaurantBox">
+      <div id="restaurantBox" data-test="restaurant-box">
         <div id="restaurantFilterOutterWrapper">
           <div id="restaurantFilterInnerWrapper">
           <p>Filter Results</p>
@@ -21,27 +21,28 @@ const restaurantName = useSelector(state => state.restaurantsFilter.restaurantNa
     )
   }else if ( restaurantsData.error !== "" ) {
     return (
-      <div id="restaurantBox">
+      <div id="restaurantBox" data-test="restaurant-box">
         <div id="restaurantFilterOutterWrapper">
           <div id="restaurantFilterInnerWrapper">
           <p>Filter Results</p>
           <RestaurantsFilterForm />
           </div>
         </div>
-        <p>{restaurantsData.error}</p>
+        {/*<p>{restaurantsData.error}</p>*/}
+        <p>Service encountered an error try again later</p>
       </div>
     )
   }else {
     return (
-      <div id="restaurantBox">
+      <div id="restaurantBox" data-test="restaurant-box">
       <React.Fragment>
       <div id="restaurantFilterOutterWrapper">
           <div id="restaurantFilterInnerWrapper">
           <p>Filter Results</p>
-          <RestaurantsFilterForm />
+          <RestaurantsFilterForm  />
           </div>
         </div>
-        <section id="restaurantContainer">
+        <section id="restaurantContainer" data-test="restaurant-container">
           
           {restaurantsData && restaurantsData.restaurants.restaurants !== undefined &&
         

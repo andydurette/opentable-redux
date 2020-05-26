@@ -14,9 +14,9 @@ function RestaurantsForm () {;
   }
 
   return (
-      <form id='restaurantSearchForm' onSubmit={(e) => restaurantSearch(e)}>
-        <input id="city" type="text" name="city" placeholder="Enter city" />
-        <button type="submit" value="Submit">Search</button>
+      <form id='restaurantSearchForm' data-test="restaurant-search-form" onSubmit={(e) => restaurantSearch(e)}>
+        <input id="city" type="text" name="city" placeholder="Enter city" data-test="restaurant-search-form-input" />
+        <button type="submit" value="Submit" data-test="restaurant-search-form-button">Search</button>
       </form>
         )
 }
