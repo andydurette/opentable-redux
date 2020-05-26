@@ -13,9 +13,12 @@ Live Heroku Link to Project:  https://opentable-bmo-redux-example.herokuapp.com/
     **then use this as an opportunity to explain what you would add.***
 
     ```
-    A. Unsure, somewhere between 8-10 hours most of it spent on trying to figure out how to mock tests for my asynch thunk call. I do not have a test for that call unfortunately and this is also what I would fix if I had more time.
+    A. 
+    Unsure, somewhere between 8-10 hours.
+Most of my time was spent on trying to figure out how to mock tests for my asynch thunk call. 
+    I do not have a test for that call unfortunately and this is also what I would fix if I had more time.
     ```
-
+    
 2. **What was the most useful feature that was added to the latest version of your
      chosen language?** 
 
