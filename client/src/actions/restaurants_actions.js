@@ -31,7 +31,7 @@ export const fetchRestaurantsFailure = (error) => {
 }
 
 export function fetchRestaurants(val){
-  var url = `http://opentable.herokuapp.com/api/restaurants?city=${val}`;
+  var url = `https://opentable.herokuapp.com/api/restaurants?city=${val}`;
   // Returns a function so that it doesn't have to be a pure function allowing asynconisity
   return (dispatch) => {
     // Sets loading screen until pass or failure is determined
