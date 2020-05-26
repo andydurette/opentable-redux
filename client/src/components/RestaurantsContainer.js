@@ -12,7 +12,6 @@ const restaurantName = useSelector(state => state.restaurantsFilter.restaurantNa
       <div id="restaurantBox" data-test="restaurant-box">
         <div id="restaurantFilterOutterWrapper">
           <div id="restaurantFilterInnerWrapper">
-          <p>Filter Results</p>
           <RestaurantsFilterForm />
           </div>
         </div>
@@ -24,7 +23,6 @@ const restaurantName = useSelector(state => state.restaurantsFilter.restaurantNa
       <div id="restaurantBox" data-test="restaurant-box">
         <div id="restaurantFilterOutterWrapper">
           <div id="restaurantFilterInnerWrapper">
-          <p>Filter Results</p>
           <RestaurantsFilterForm />
           </div>
         </div>
@@ -38,7 +36,6 @@ const restaurantName = useSelector(state => state.restaurantsFilter.restaurantNa
       <React.Fragment>
       <div id="restaurantFilterOutterWrapper">
           <div id="restaurantFilterInnerWrapper">
-          <p>Filter Results</p>
           <RestaurantsFilterForm  />
           </div>
         </div>
