@@ -13,7 +13,7 @@ Live Heroku Link to Project:  https://opentable-bmo-redux-example.herokuapp.com/
     **then use this as an opportunity to explain what you would add.***
 
     ```
-    A. Unsure, somewhere between 8-10 hours most of it spent on trying to figure out how to mock tests   for my asynch thunk call. Which I do not have a test for unfortunately. This is also what I would fix if I had more time.
+    A. Unsure, somewhere between 8-10 hours most of it spent on trying to figure out how to mock tests for my asynch thunk call. I do not have a test for that call unfortunately and this is also what I would fix if I had more time.
     ```
 
 2. **What was the most useful feature that was added to the latest version of your
@@ -31,12 +31,12 @@ Live Heroku Link to Project:  https://opentable-bmo-redux-example.herokuapp.com/
      **had to do this?**
 
      ```
-     A. I would track it by looking at the network panel looking if files aren't loading if there is delays.
+     A. I would use the network panel, checking if files aren't loading if there is delays.
      ```
 
 4. **How would you improve the API that you just used?**
 
-       A. The image files seem to be all just a single grey image for having proper images would be my first thought however on implementation I would really like a cuisine type option.
+       A. I would really like a cuisine type option added.
 
 5. **Please describe yourself using JSON.**
 
