@@ -2,11 +2,6 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
-
-#restaurantSearchForm{
-  display: flex;
-}
-
 h2{
   margin-bottom:40px;
   margin-left:10px;
@@ -87,7 +82,7 @@ p{
 }
 
 
-form, h1, .logo{
+#restaurantSearchForm, h1, .logo{
   padding:10px 50px;
   margin:0;
 }
@@ -127,6 +122,12 @@ animation-duration: 0.5s;
 }
 }
 
+
+@media only screen and (min-width: 600px) {
+  #restaurantSearchForm{
+    display: flex;
+  }
+}
 
 
 @media only screen and (min-width: 600px) and (max-width: 792px){

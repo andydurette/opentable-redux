@@ -18,9 +18,9 @@ function RestaurantsForm () {;
   return (
     <React.Fragment>
       <p>Filter Results:</p>
-      <div id="restaurantFilter" data-test="restaurant-filter"  onSumbit={(e) => preventSubmit(e)}>
+      <div id="restaurantFilter" data-test="restaurant-filter"  onSubmit={(e) => preventSubmit(e)}>
         <form>
-          <label for="filter" className="visuallyhidden">Filter Results:</label>
+          <label htmlFor="filter" className="visuallyhidden">Filter Results:</label>
           <input id="filter" name="filter" data-test="restaurant-filter-input"  type="text" placeholder="Enter restaurant name" onChange={(e) => restaurantFilter(e)}/>
         </form>
       </div>

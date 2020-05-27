@@ -24,8 +24,6 @@ html{
     display:flex;
     justify-content: flex-end;
     #restaurantFilterInnerWrapper{
-      display: flex;
-      justify-content: flex-end;
       align-items: center;
       background-color: #db3743;
       color: white;
@@ -137,6 +135,10 @@ html{
 }
 
 @media only screen and (min-width: 600px) {
+  #restaurantFilterInnerWrapper{
+    display: flex;
+    justify-content: flex-end;
+  }
   #restaurantContainer{
     display:flex;
     flex-direction:row;
